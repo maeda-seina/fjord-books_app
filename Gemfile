@@ -36,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dotenv-rails'
   gem 'faker'
   gem 'i18n_generators'
   gem 'letter_opener_web'
@@ -45,7 +46,6 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
-  gem 'dotenv-rails'
 end
 
 group :test do
@@ -63,3 +63,5 @@ gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
 gem 'kaminari'
+gem 'omniauth', '~> 1.9.1'
+gem 'omniauth-github'
