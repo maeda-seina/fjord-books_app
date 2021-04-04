@@ -7,6 +7,6 @@ ja:
   New: 新規作成
   Editing: 編集
   are_you_sure?: 本当に削除しますか？
-  book_was_successfully_created: 登録完了しました。
-  book_was_successfully_updated: 更新完了しました。
-  book_was_successfully_destroyed: 削除しました。
+  book_was_created: 登録完了しました。
+  book_was_updated: 更新完了しました。
+  book_was_destroyed: 削除しました。
