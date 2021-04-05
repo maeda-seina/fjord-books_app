@@ -45,9 +45,7 @@ class ReportsController < ApplicationController
 
   def ensure_correct_user
     report = Report.find(params[:id])
-    if current_user != report.user
-      redirect_to reports_path
-    end
+    redirect_to reports_path if current_user != report.user
   end
 
   private
