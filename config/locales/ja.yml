@@ -240,6 +240,9 @@ ja:
     followers:
       index:
         title: フォロワー
+  reports:
+    index:
+      creator: 作成者
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

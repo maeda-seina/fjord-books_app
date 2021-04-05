@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
+  before_action :ensure_correct_user, only: %i[edit update destroy]
+
   def index
     @reports = Report.all
   end
@@ -39,6 +41,13 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
     @report.destroy
     redirect_to reports_path
+  end
+
+  def ensure_correct_user
+    report = Report.find(params[:id])
+    if current_user != report.user
+      redirect_to reports_path
+    end
   end
 
   private
