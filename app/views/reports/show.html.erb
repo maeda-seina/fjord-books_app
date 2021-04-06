@@ -18,6 +18,8 @@
     <tr>
       <th>コメント内容</th>
       <th>投稿者</th>
+      <th>メールアドレス</th>
+      <th>投稿日時</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +27,8 @@
       <tr>
         <td><%= comment.body %></td>
         <td><%= comment.user.name %></td>
+        <td><%= comment.user.email %></td>
+        <td><%= comment.created_at %></td>
       </tr>
     <% end %>
   </tbody>
