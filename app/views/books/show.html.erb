@@ -22,3 +22,21 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+<table>
+  <thead>
+    <tr>
+      <th>コメント内容</th>
+      <th>投稿者</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @book.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.body %></td>
+        <td><%= comment.user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'comments/form', commentable: @book, comment: @book.comments.new %>
