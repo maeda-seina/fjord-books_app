@@ -12,3 +12,20 @@
 
 <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <%= link_to t('views.common.back'), reports_path %>
+<table>
+  <thead>
+    <tr>
+      <th>コメント内容</th>
+      <th>投稿者</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @report.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.body %></td>
+        <td><%= comment.user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= render 'comments/form', commentable: @report, comment: @report.comments.new %>

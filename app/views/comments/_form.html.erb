@@ -1,0 +1,9 @@
+<%= form_with(model: [commentable, comment], local: true) do |f| %>
+ <div class="field">
+    <%= f.text_field :body %>
+  </div>
+
+  <div class="action">
+    <%= f.submit 'コメントする' %>
+  </div>
+<% end %>
