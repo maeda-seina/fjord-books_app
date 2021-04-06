@@ -22,6 +22,7 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+<% if @book.comments.count > 0 %>
 <table>
   <thead>
     <tr>
@@ -38,5 +39,10 @@
     <% end %>
   </tbody>
 </table>
-
+<% end %>
+<div>
+<% if @book.comments.count.zero? %>
+  <%= "コメントはありません" %>
+<% end %>
+</div>
 <%= render 'comments/form', commentable: @book, comment: @book.comments.new %>
