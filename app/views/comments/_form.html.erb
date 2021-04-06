@@ -1,6 +1,6 @@
 <%= form_with(model: [commentable, comment], local: true) do |f| %>
  <div class="field">
-    <%= f.text_field :body %>
+    <%= f.text_field :body, required: true %>
   </div>
 
   <div class="action">
