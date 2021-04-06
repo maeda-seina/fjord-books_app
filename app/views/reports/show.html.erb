@@ -16,10 +16,10 @@
 <table>
   <thead>
     <tr>
-      <th>コメント内容</th>
-      <th>投稿者</th>
-      <th>メールアドレス</th>
-      <th>投稿日時</th>
+      <th><%= Comment.human_attribute_name(:body) %></th>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= Comment.human_attribute_name(:created_at) %></th>
     </tr>
   </thead>
   <tbody>
@@ -36,7 +36,7 @@
 <% end %>
 <div>
 <% if @report.comments.count.zero? %>
-  <%= "コメントはありません" %>
+  <%= t('views.common.nothing_body', name: Comment.model_name.human) %>
 <% end %>
 </div>
 <%= render 'comments/form', commentable: @report, comment: @report.comments.new %>
