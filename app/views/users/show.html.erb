@@ -7,7 +7,6 @@
       <th><%= User.human_attribute_name(:postal_code) %></th>
       <th><%= User.human_attribute_name(:address) %></th>
       <th><%= User.human_attribute_name(:introduction) %></th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -23,7 +22,5 @@
 </table>
 <% if @user == current_user %>
   <%= link_to "編集画面へ", edit_user_registration_path %>
-<% end %>
-<div>
-  <%= link_to "ユーザーの一覧画面へ戻る", users_path %>
-</div>
+<% end %><br>
+<%= link_to "ユーザーの一覧画面へ戻る", users_path %>
