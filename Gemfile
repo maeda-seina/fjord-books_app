@@ -36,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dotenv-rails'
   gem 'faker'
   gem 'i18n_generators'
   gem 'letter_opener_web'
@@ -62,3 +63,5 @@ gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
 gem 'kaminari'
+gem 'omniauth', '~> 1.9.1'
+gem 'omniauth-github'
