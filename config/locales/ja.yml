@@ -1,0 +1,12 @@
+ja:
+  Books: 本
+  Title: タイトル
+  Memo: メモ
+  Author: 筆者
+  Picture: 画像
+  New: 新規作成
+  Editing: 編集
+  are_you_sure?: 本当に削除しますか？
+  book_was_created: 登録完了しました。
+  book_was_updated: 更新完了しました。
+  book_was_destroyed: 削除しました。
