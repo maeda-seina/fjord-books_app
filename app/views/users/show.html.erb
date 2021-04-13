@@ -1,0 +1,26 @@
+<h1><%= User.model_name.human %><%= t('views.common.show') %></h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= User.human_attribute_name(:postal_code) %></th>
+      <th><%= User.human_attribute_name(:address) %></th>
+      <th><%= User.human_attribute_name(:introduction) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+    <td><%= @user.name %></td>
+    <td><%= @user.email %></td>
+    <td><%= @user.postal_code %></td>
+    <td><%= @user.address %></td>
+    <td><%= @user.introduction %></td>
+    </tr>
+  </tbody>
+</table>
+<% if @user == current_user %>
+  <%= link_to "編集画面へ", edit_user_registration_path %>
+<% end %><br>
+<%= link_to "ユーザーの一覧画面へ戻る", users_path %>
