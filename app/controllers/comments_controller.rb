@@ -5,8 +5,11 @@ class CommentsController < ApplicationController
     resource, id = request.path.split('/')[1, 2]
     @commentable = resource.singularize.classify.constantize.find(id)
     @comment = @commentable.comments.build(comment_params)
-    @comment.save
-    redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+    if @comment.save
+      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+    else
+      redirect_to @commentable, notice: t('controllers.common.notice_fail', name: Comment.model_name.human)
+    end
   end
 
   private

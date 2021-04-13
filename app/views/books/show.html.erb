@@ -38,7 +38,7 @@
         <td><%= comment.body %></td>
         <td><%= comment.user.name %></td>
         <td><%= comment.user.email %></td>
-        <td><%= comment.created_at %></td>
+        <td><%= l(comment.created_at, format: :long) %></td>
       </tr>
     <% end %>
   </tbody>
