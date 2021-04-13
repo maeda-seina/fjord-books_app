@@ -22,3 +22,31 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+<% if @book.comments.count > 0 %>
+<table>
+  <thead>
+    <tr>
+      <th><%= Comment.human_attribute_name(:body) %></th>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= Comment.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @book.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.body %></td>
+        <td><%= comment.user.name %></td>
+        <td><%= comment.user.email %></td>
+        <td><%= l(comment.created_at, format: :long) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<div>
+<% if @book.comments.count.zero? %>
+  <%= t('views.common.nothing_body', name: Comment.model_name.human) %>
+<% end %>
+</div>
+<%= render 'comments/form', commentable: @book, comment: @book.comments.new %>

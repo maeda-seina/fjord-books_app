@@ -1,0 +1,42 @@
+<h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
+
+<p>
+  <strong><%= Report.human_attribute_name(:title) %>:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name(:body) %>:</strong>
+  <%= @report.body %>
+</p>
+
+<%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<%= link_to t('views.common.back'), reports_path %>
+<% if @report.comments.count > 0 %>
+<table>
+  <thead>
+    <tr>
+      <th><%= Comment.human_attribute_name(:body) %></th>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= Comment.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @report.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.body %></td>
+        <td><%= comment.user.name %></td>
+        <td><%= comment.user.email %></td>
+        <td><%= l(comment.created_at, format: :long) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<div>
+<% if @report.comments.count.zero? %>
+  <%= t('views.common.nothing_body', name: Comment.model_name.human) %>
+<% end %>
+</div>
+<%= render 'comments/form', commentable: @report, comment: @report.comments.new %>

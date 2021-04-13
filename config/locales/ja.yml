@@ -218,6 +218,7 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+      nothing_body: コメントがありません
     pagination:
       first: '最初'
       last: '最後'
@@ -240,11 +241,15 @@ ja:
     followers:
       index:
         title: フォロワー
+  reports:
+    index:
+      creator: 作成者
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      notice_fail: "%{name}の保存に失敗しました。"
   relationships:
     create:
       notice: "フォローしました。"
