@@ -1,0 +1,25 @@
+<h2><%= "#{@user.name}のフォロー一覧" %></h2>
+<% if @user.followings.count > 0 %>
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>フォロー数</th>
+      <th>フォロワー数</th>
+    </tr>
+  </thead>
+  <% @user.followings.each do |user| %>
+  <tbody>
+    <tr>
+      <td><%= link_to user.name, user_path(user) %></td>
+      <td><%= link_to user.followings.count, following_user_path(user) %></td>
+      <td><%= link_to user.followers.count, followers_user_path(user) %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+<% end %>
+<% if @user.followings.count == 0 %>
+  <%= "#{@user.name}がフォローしている人はいません" %>
+<% end %><br>
+<%= link_to "#{@user.name}のユーザー詳細へ戻る", user_path %>

@@ -37,6 +37,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'faker'
   gem 'i18n_generators'
   gem 'letter_opener_web'
