@@ -42,6 +42,9 @@ class BooksTest < ApplicationSystemTestCase
     fill_in '著者', with: 'miyake,osumi'
     click_on '更新する'
 
+    assert_text '新しいLinuxの教科書'
+    assert_text 'とてもわかりやすい！'
+    assert_text 'miyake,osumi'
     assert_text '本が更新されました。'
     click_on '戻る'
   end
