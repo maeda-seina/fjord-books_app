@@ -4,13 +4,3 @@ alice:
   user: alice
   title: アリスの日記
   content: 今日は晴れていた。
-
-# one:
-#   user: one
-#   title: MyString
-#   content: MyText
-
-# two:
-#   user: two
-#   title: MyString
-#   content: MyText
