@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-alice:
+alice_report:
   user: alice
   title: アリスの日記
   content: 今日は晴れていた。
